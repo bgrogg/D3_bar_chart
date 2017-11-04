@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> D3 Bar Chart</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="index.css" type="text/css">
+  </head>
+  <body>
+    <div class="chart"></div>
+
+    <script>
+      var data = [30, 86, 168, 281, 303, 365];
+
+      d3.select(".chart")
+        .selectAll("div")
+        .data(data)
+          .enter()
+          .append("div")
+          .style("width", function(d) { return d + "px"; })
+          .text(function(d) { return d; });
+    </script>
+  </body>
+</html>
